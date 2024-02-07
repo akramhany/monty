@@ -35,4 +35,9 @@ typedef struct instruction_s
 } instruction_t;
 
 
+void add_dnodeint(stack_t **stack, unsigned int line_number);
+
+void printAll(stack_t **stack, unsigned int line_number);
+
+
 #endif

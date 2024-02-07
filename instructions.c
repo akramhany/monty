@@ -30,12 +30,12 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * popAll - pops all nodes from a stack.
+ * printAll - pops all nodes from a stack.
  * @stack: pointer to the head of the stack.
  * @line_number: value stored in the node.
  * Return: void
  */
-void popAll(stack_t **stack, unsigned int line_number)
+void printAll(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr = *stack;
 
