@@ -6,7 +6,7 @@
  * @str: the string to check.
  * Return: 1 if it contains only numbers, -1 if it doesn't.
  */
-int check_integer(const char* str)
+int check_integer(const char *str)
 {
 	int i = 0;
 
@@ -61,7 +61,7 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 
 	if (check_integer(push.opcode) == -1)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);	
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(newNode);
 		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
@@ -107,7 +107,7 @@ void printAll(stack_t **stack, unsigned int line_number)
  * @str: input string.
  * Return: void.
  */
-void trim_dSign(char* str)
+void trim_dSign(char *str)
 {
 	int i = 0;
 
