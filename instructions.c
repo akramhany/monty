@@ -17,11 +17,11 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	newNode->n = atoi(opcode);
+	newNode->n = atoi(push.opcode);
 	if (*stack == NULL)
 	{
 		*stack = newNode;
-		return (newNode);
+		return;
 	}
 
 	newNode->next = *stack;
@@ -41,7 +41,7 @@ void printAll(stack_t **stack, unsigned int line_number)
 
 	while (ptr)
 	{
-		printf("%s\n", ptr->n);
+		printf("%d\n", ptr->n);
 		ptr = ptr->next;
 	}
 }
