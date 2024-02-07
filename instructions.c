@@ -111,8 +111,14 @@ void trim_dSign(char *str)
 {
 	int i = 0;
 
-	if (*str == '\0' || str[0] == '$')
+	if (*str == '\0')
 		return;
+
+	if (str[0] == '$')
+	{
+		str[1] = '\0';
+		return;
+	}
 
 	while (str[i] != '\0' && str[i] != '$')
 		i++;

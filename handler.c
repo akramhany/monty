@@ -21,13 +21,13 @@ void handle_commands(FILE *montyFile, stack_t **stack)
 
 	while (fgets(buffer, sizeof(buffer), montyFile) != NULL)
 	{
-		instruction = strtok(buffer, " ");
+		instruction = strtok(buffer, " \t");
 
 		trim_dSign(instruction);
 
 		if (strcmp(instruction, "push") == 0)
 		{
-			push.opcode = strtok(NULL, " ");
+			push.opcode = strtok(NULL, " \t");
 			trim_dSign(push.opcode);
 			push.f(stack, line_number);
 		}
@@ -38,6 +38,7 @@ void handle_commands(FILE *montyFile, stack_t **stack)
 		else if (strcmp(instruction, "$") != 0)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, instruction);
+			exit(EXIT_FAILURE);
 		}
 
 		line_number++;
