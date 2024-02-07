@@ -36,9 +36,10 @@ typedef struct instruction_s
 
 
 void add_dnodeint(stack_t **stack, unsigned int line_number);
-
 void printAll(stack_t **stack, unsigned int line_number);
 
+void free_dlistint(stack_t *head);
+int check_integer(const char* str);
 
 extern instruction_t push;
 extern instruction_t pall;
