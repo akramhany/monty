@@ -17,7 +17,7 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	newNode->n = line_number;
+	newNode->n = atoi(opcode);
 	if (*stack == NULL)
 	{
 		*stack = newNode;
