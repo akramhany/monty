@@ -10,5 +10,26 @@
  */
 int main(int argc, char *argv[])
 {
+	FILE* montyFile = NULL;
 
+	/*If number of passed arguments not equal 2 print an error and exit*/
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+
+	/*Open the monty file*/
+	montyFile = fopen(argv[1], "r");
+
+	/*If the monty file couldn't be open, print an error message and exit*/
+	if (montyFile == NULL)
+	{	
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+
+	fclose(montyFile);
+
+	return (0);
 }
