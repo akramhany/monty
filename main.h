@@ -40,4 +40,8 @@ void add_dnodeint(stack_t **stack, unsigned int line_number);
 void printAll(stack_t **stack, unsigned int line_number);
 
 
+extern instruction_t push;
+extern instruction_t pall;
+
+
 #endif
