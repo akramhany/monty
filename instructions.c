@@ -17,6 +17,7 @@ int check_integer(const char* str)
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (-1);
+		i++;
 	}
 
 	return (1);
@@ -99,3 +100,26 @@ void printAll(stack_t **stack, unsigned int line_number)
 		ptr = ptr->next;
 	}
 }
+
+
+/**
+ * trim_dSign - takes a string and removes the dollar sign from its end.
+ * @str: input string.
+ * Return: void.
+ */
+void trim_dSign(char* str)
+{
+	int i = 0;
+
+	if (*str == '\0' || str[0] == '$')
+		return;
+
+	while (str[i] != '\0' && str[i] != '$')
+		i++;
+
+	str[i] = '\0';
+}
+
+
+
+
