@@ -38,10 +38,10 @@ typedef struct instruction_s
 
 void add_dnodeint(stack_t **stack, unsigned int line_number);
 void printAll(stack_t **stack, unsigned int line_number);
-
 void free_dlistint(stack_t *head);
 int check_integer(const char *str);
 void trim_dSign(char *str);
+void print_top(stack_t **stack, unsigned int line_number);
 
 void handle_commands(FILE *montyFile, stack_t **stack);
 
