@@ -45,3 +45,34 @@ void pop_top(stack_t **stack, unsigned int line_number)
 
 	free(ptr);
 }
+
+
+
+/**
+ * swap_top - swaps the top 2 elements in the stack.
+ * @stack: pointer to the top of the stack.
+ * @line_number: the line number which contained the pint instruction.
+ * Return: void.
+ */
+void swap_top(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+
+	if (!ptr || !ptr->next)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	ptr = ptr->next;
+
+	(*stack)->next = ptr->next;
+	ptr->prev = NULL;
+	ptr->next = *stack;
+	(*stack)->prev = ptr;
+
+	if ((*stack)->next)
+		(*stack)->next->prev = *stack;
+
+	(*stack) = ptr;
+}

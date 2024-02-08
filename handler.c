@@ -4,6 +4,7 @@ instruction_t push;
 instruction_t pall;
 instruction_t pint;
 instruction_t pop;
+instruction_t swap;
 
 /**
  * handle_commands - extract commands from the file and executes them.
@@ -22,6 +23,7 @@ void handle_commands(FILE *montyFile, stack_t **stack)
 	pall.f = printAll;
 	pint.f = print_top;
 	pop.f = pop_top;
+	swap.f = swap_top;
 
 	while (fgets(buffer, sizeof(buffer), montyFile) != NULL)
 	{
@@ -46,6 +48,10 @@ void handle_commands(FILE *montyFile, stack_t **stack)
 		else if (strcmp(instruction, "pop") == 0)
 		{
 			pop.f(stack, line_number);
+		}
+		else if (strcmp(instruction, "swap") == 0)
+		{
+			swap.f(stack, line_number);
 		}
 		else if (strcmp(instruction, "$") != 0 && strcmp(instruction, "\0") != 0)
 		{

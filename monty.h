@@ -43,6 +43,7 @@ int check_integer(const char *str);
 void trim_dSign(char *str);
 void print_top(stack_t **stack, unsigned int line_number);
 void pop_top(stack_t **stack, unsigned int line_number);
+void swap_top(stack_t **stack, unsigned int line_number);
 
 void handle_commands(FILE *montyFile, stack_t **stack);
 
