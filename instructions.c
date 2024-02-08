@@ -13,12 +13,18 @@ int check_integer(const char *str)
 	if (*str == '\0')
 		return (-1);
 
+	if (str[i] == '-')
+		i++;
+
 	while (str[i] != '\0')
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (-1);
 		i++;
 	}
+
+	if (str[0] == '-' && i == 1)
+		return (-1);
 
 	return (1);
 }
