@@ -3,6 +3,7 @@
 instruction_t push;
 instruction_t pall;
 instruction_t pint;
+instruction_t pop;
 
 /**
  * handle_commands - extract commands from the file and executes them.
@@ -20,6 +21,7 @@ void handle_commands(FILE *montyFile, stack_t **stack)
 	push.f = add_dnodeint;
 	pall.f = printAll;
 	pint.f = print_top;
+	pop.f = pop_top;
 
 	while (fgets(buffer, sizeof(buffer), montyFile) != NULL)
 	{
@@ -40,6 +42,10 @@ void handle_commands(FILE *montyFile, stack_t **stack)
 		else if (strcmp(instruction, "pint") == 0)
 		{
 			pint.f(stack, line_number);
+		}
+		else if (strcmp(instruction, "pop") == 0)
+		{
+			pop.f(stack, line_number);
 		}
 		else if (strcmp(instruction, "$") != 0 && strcmp(instruction, "\0") != 0)
 		{
