@@ -35,7 +35,7 @@ void handle_commands(FILE *montyFile, stack_t **stack)
 		{
 			pall.f(stack, line_number);
 		}
-		else if (strcmp(instruction, "$") != 0)
+		else if (strcmp(instruction, "$") != 0 && strcmp(instruction, "\0") != 0)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, instruction);
 			exit(EXIT_FAILURE);

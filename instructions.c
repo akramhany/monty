@@ -119,8 +119,7 @@ void trim_dSign(char *str)
 		str[1] = '\0';
 		return;
 	}
-
-	while (str[i] != '\0' && str[i] != '$')
+	while (str[i] != '\0' && str[i] != '$' && str[i] != '\n')
 		i++;
 
 	str[i] = '\0';
